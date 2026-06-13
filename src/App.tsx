@@ -110,6 +110,7 @@ export default function App() {
         width: '100vw',
         height: '100vh',
         zIndex: 1,
+        pointerEvents: 'none',
       }}>
         <Canvas
           camera={{ position: [0, 0.2, 2.2], fov: 50 }}
