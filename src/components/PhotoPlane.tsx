@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import type { PhysicsOutput } from '../physics';
 
 interface PhotoPlaneProps {
-  textureUrl: string | null;
+  textureUrl: string;
   scrollProgress: number;
   physics: PhysicsOutput;
   emergenceTime: number;
@@ -33,7 +33,7 @@ export function PhotoPlane({ textureUrl, scrollProgress, physics, emergenceTime 
     return tex;
   }, []);
 
-  const [loadedTexture] = useLoader(THREE.TextureLoader as any, textureUrl ? [textureUrl] : []) as any[];
+  const [loadedTexture] = useLoader(THREE.TextureLoader as any, [textureUrl]) as any[];
   
   const photoTex = loadedTexture || defaultTexture;
   if (photoTex !== defaultTexture) {

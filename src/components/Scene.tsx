@@ -11,7 +11,7 @@ import { Droplets } from './Droplets';
 interface SceneProps {
   scrollProgress: number;
   scrollVelocity: number;
-  textureUrl: string | null;
+  textureUrl: string;
   reducedMotion: boolean;
 }
 

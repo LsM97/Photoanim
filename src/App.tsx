@@ -32,8 +32,11 @@ function useScrollProgress() {
   return { scrollProgress, scrollVelocity };
 }
 
-function usePhotoUrl(): string | null {
-  const [url, setUrl] = useState<string | null>(null);
+const DEFAULT_PHOTO_URL =
+  'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop&q=80';
+
+function usePhotoUrl(): string {
+  const [url, setUrl] = useState<string>(DEFAULT_PHOTO_URL);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
